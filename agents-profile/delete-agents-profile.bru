@@ -1,0 +1,34 @@
+meta {
+  name: delete-agents-profile
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://{{process.env.HOST}}/xapi/agents/profile
+  body: none
+  auth: inherit
+}
+
+query {
+  agent: {"mbox":"mailto:m7AR7dR@integralla.io"}
+  profileId: 695e8319-4d35-409a-8445-51a404ce65d9
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+}
+
+docs {
+  The `/agents/profile` endpoint provides a way to create and retrieve a document that defines arbitrary data regarding an agent. Each document is identified by the agent it concerns, plus a profile identifier which must be provided by the system that generates the document.
+  
+  _This `DELETE` request can be used to delete an agent profile document._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.6 Agent Profile Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#26-agent-profile-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.5 Agent Profile Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5165-agent-profile-resource-agentsprofile)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/agent-profile-resource.html](https://docs.integralla.com/lrs/agent-profile-resource.html)
+}

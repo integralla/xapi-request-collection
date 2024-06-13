@@ -1,0 +1,31 @@
+meta {
+  name: extensions-agents-restriction
+  type: http
+  seq: 4
+}
+
+put {
+  url: https://{{process.env.HOST}}/xapi/extensions/agents/restriction
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+}
+
+body:json {
+  {
+    "agent": {
+      "mbox": "mailto:saika.miura@example.com"
+    },
+    "restrictProcessing": true
+  }
+}
+
+docs {
+  Integralla LRS provides this extention to restrict processing for the personal data associated with a given agent identifier.
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/agent-extensions.html#restrict-processing](https://docs.integralla.com/lrs/agent-extensions.html#restrict-processing)
+}

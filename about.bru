@@ -1,0 +1,29 @@
+meta {
+  name: /about
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://{{process.env.HOST}}/xapi/about
+  body: none
+  auth: none
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+}
+
+docs {
+  The `/about` endpoint provides a way to retrieve information about an 
+  LRS, and is required specifically to return an array of the latest 
+  version of the specification supported for each major version. It is 
+  the only unauthenticated resource defined by the specification.
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.8 About Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#28-about-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.7 About Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5167-about-resource-about)
+
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/about-resource.html](https://docs.integralla.com/lrs/about-resource.html)
+}

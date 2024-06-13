@@ -1,0 +1,45 @@
+meta {
+  name: post-activities-profile
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://{{process.env.HOST}}/xapi/activities/profile?activityId=http://example.com/activity/code-commit&profileId=db85779d-41ab-48a8-80e5-eed9683fef64
+  body: json
+  auth: inherit
+}
+
+query {
+  activityId: http://example.com/activity/code-commit
+  profileId: db85779d-41ab-48a8-80e5-eed9683fef64
+}
+
+headers {
+  Content-Type: application/json
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+  ~If-None-Match: "534b6aa112e95f2c16e5151dae3bc39cc3a2172c"
+  ~If-Match: "e8069af310ea98dcdd15d6cf03edfb95e8921faf"
+}
+
+body:json {
+  {
+    "x": 1,
+    "y": 0.5,
+    "z": true
+  }
+}
+
+docs {
+  The `/activities/profile` endpoint provides a way to create and retrieve a document that defines arbitrary data regarding an activity. Each document is identified by the identifier of the activity it concerns, plus a profile identifier which must be provided by the system that generates the document.
+  
+  _This `POST` request can be used to write an activity profile document._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.6 Agent Profile Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#26-agent-profile-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.5 Agent Profile Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5165-agent-profile-resource-agentsprofile)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/agent-profile-resource.html](https://docs.integralla.com/lrs/agent-profile-resource.html)
+}

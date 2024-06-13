@@ -1,0 +1,30 @@
+meta {
+  name: extensions-agents-anonymization
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://{{process.env.HOST}}/xapi/extensions/agents/anonymization
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+}
+
+body:json {
+  {
+    "objectType": "Agent",
+    "name": "Forget Me",
+    "mbox": "mailto:forgetme@example.com"
+  }
+}
+
+docs {
+  Integralla LRS provides this extention to anonymize the personal data for a given agent identifier (IFI).
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/agent-extensions.html#agent-anonymization](https://docs.integralla.com/lrs/agent-extensions.html#agent-anonymization)
+}

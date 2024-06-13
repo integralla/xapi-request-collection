@@ -1,0 +1,61 @@
+meta {
+  name: statements-application-json
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://{{process.env.HOST}}/xapi/statements
+  body: json
+  auth: inherit
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "actor": {
+      "objectType": "Agent",
+      "name": "Sayana Ishikuno",
+      "mbox": "mailto:sishikuno@example.com"
+    },
+    "verb": {
+      "id": "http://activitystrea.ms/schema/1.0/submit",
+      "display": {
+        "en-US": "submitted"
+      }
+    },
+    "object": {
+      "objectType": "Activity",
+      "id": "http://example.com/activity/code-commit",
+      "definition": {
+        "name": {
+          "en-US": "Code Commit"
+        },
+        "description": {
+          "en-US": "A commit to a code repository e.g. Github. "
+        },
+        "type": "http://id.tincanapi.com/activitytype/code-commit"
+      }
+    }
+  }
+}
+
+docs {
+  The `/statements` endpoint provides a way to store and retrieve xAPI
+  Statement objects, which is a data structure designed to capture data
+  regarding a wide variety of learning experiences. It is the primary
+  Learning Record type defined by the Experience API specification.
+  
+  _This `POST` request can be used to write one or more statements (without attachments)._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Data > 2.0 Statements](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#20-statements)
+  * xAPI 2.0 – [xAPI-Communication > 2.1 Statement Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#21-statement-resource)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/statements-resource.html](https://docs.integralla.com/lrs/statements-resource.html)
+}

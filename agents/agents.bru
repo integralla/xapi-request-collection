@@ -1,0 +1,31 @@
+meta {
+  name: agents
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{process.env.HOST}}/xapi/agents?agent=%7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D
+  body: none
+  auth: inherit
+}
+
+query {
+  agent: %7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+}
+
+docs {
+  The `/agents` endpoint provides a way to retrieve all the information that an LRS has regarding an agent.
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.4 Agents Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#24-agents-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.3 Agents Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5163-agents-resource-agents)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/agents-resource.html](https://docs.integralla.com/lrs/agents-resource.html)
+}

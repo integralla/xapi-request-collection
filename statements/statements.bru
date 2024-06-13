@@ -1,0 +1,49 @@
+meta {
+  name: statements
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://{{process.env.HOST}}/xapi/statements
+  body: none
+  auth: inherit
+}
+
+query {
+  ~pseudonymized: true
+  ~limit: 1
+  ~format: exact
+  ~agent: {"mbox":"mailto:restricted@integralla.io"}
+  ~related_agents: true
+  ~verb: http://adlnet.gov/expapi/test/voided/target/1783d33e-61e1-48fa-bfea-fed4e11812cd
+  ~registration: 712f7944-634f-4bef-91a0-8908f9a9ac5f
+  ~activity: https://lrs.integralla.io/xapi/activities/qSn3UTd
+  ~related_activities: true
+  ~ascending: true
+  ~attachments: true
+  ~since: 2023-10-26T17:34:44.306Z
+  ~until: 2023-09-08T00:00:00.000Z
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+  Accept-Language: en-US,en;q=0.8
+}
+
+docs {
+  The `/about` endpoint provides a way to retrieve information about an
+  LRS, and is required specifically to return an array of the latest
+  version of the specification supported for each major version. It is
+  the only unauthenticated resource defined by the specification.
+  
+  _This `GET` request can be used to retrieve all, or a filtered subset, of stored statements (optionally, with attachments)._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.8 About Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#28-about-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.7 About Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5167-about-resource-about)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/about-resource.html](https://docs.integralla.com/lrs/about-resource.html)
+}

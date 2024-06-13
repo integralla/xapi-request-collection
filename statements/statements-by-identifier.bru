@@ -1,0 +1,40 @@
+meta {
+  name: statements-by-identifier
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://{{process.env.HOST}}/xapi/statements?statementId=de01330f-8201-4991-8d90-4168135eaf78
+  body: none
+  auth: inherit
+}
+
+query {
+  statementId: de01330f-8201-4991-8d90-4168135eaf78
+  ~pseudonymized: true
+  ~format: canonical
+  ~attachments: true
+}
+
+headers {
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+  Accept-Language: en-US,en;q=0.8
+}
+
+docs {
+  The `/statements` endpoint provides a way to store and retrieve xAPI 
+  Statement objects, which is a data structure designed to capture data 
+  regarding a wide variety of learning experiences. It is the primary 
+  Learning Record type defined by the Experience API specification.
+  
+  _This `GET` request can be used to retrieve a single, identified statement (optionally, with attachments)._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Data > 2.0 Statements](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Data.md#20-statements)
+  * xAPI 2.0 – [xAPI-Communication > 2.1 Statement Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#21-statement-resource)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/statements-resource.html](https://docs.integralla.com/lrs/statements-resource.html)
+}

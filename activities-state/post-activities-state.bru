@@ -1,0 +1,46 @@
+meta {
+  name: post-activities-state
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://{{process.env.HOST}}/xapi/activities/state?activityId=http:/example.com/activities/code-commit&agent=%7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D&stateId=b5c17b80-156e-4129-9b45-16fc40081d1f
+  body: json
+  auth: inherit
+}
+
+query {
+  activityId: http:/example.com/activities/code-commit
+  agent: %7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D
+  stateId: b5c17b80-156e-4129-9b45-16fc40081d1f
+  ~registration: 362ee0c0-6b10-45b4-86f8-83357addeabc
+}
+
+headers {
+  Content-Type: application/json
+  X-Experience-API-Version: {{process.env.XAPI_VERSION}}
+  Accept-Encoding: gzip, deflate, sdch
+  ~If-None-Match: "534b6aa112e95f2c16e5151dae3bc39cc3a2172c"
+  ~If-Match: *
+}
+
+body:json {
+  {
+    "x": 1,
+    "y": 2
+  }
+}
+
+docs {
+  The `/activities/state` endpoint provides a way to create and retrieve a document used to persist arbitrary data regarding the state of a learning experience. Typically, this is used to persist state across devices, or as a storage area for Learning Record Providers (LRPs) that do not have their own internal storage mechanism. Each document is identified by the identifier of the activity and agent it concerns, plus a state identifier which must be provided by the system that generates the document.
+  
+  _This `POST` request can be used to write an activity state document._
+  
+  Specification:
+  
+  * xAPI 1.0 – [xAPI-Communication > 2.3 State Resource](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#23-state-resource)
+  * xAPI 2.0 – [9274.1.1 xAPI Base Standard for Content > 5.1.6.2 State Resource](https://opensource.ieee.org/xapi/xapi-base-standard-documentation/-/blob/main/9274.1.1%20xAPI%20Base%20Standard%20for%20Content.md?ref_type=heads#5162-state-resource-activitiesstate)
+  
+  Integralla LRS Documentation: [https://docs.integralla.com/lrs/activity-state-resource.html](https://docs.integralla.com/lrs/activity-state-resource.html)
+}
