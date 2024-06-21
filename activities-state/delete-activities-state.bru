@@ -5,16 +5,16 @@ meta {
 }
 
 delete {
-  url: https://{{process.env.HOST}}/xapi/activities/state?activityId=http:/example.com/activities/code-commit&agent=%7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D&stateId=4ff271b0-de79-4162-8812-077a49edd000
+  url: https://{{process.env.HOST}}/xapi/activities/state?activityId=http:/example.com/activities/demo&agent=%7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D&stateId=00000000-0000-0000-0000-000000000000
   body: none
   auth: inherit
 }
 
 query {
-  activityId: http:/example.com/activities/code-commit
-  agent: %7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D
-  stateId: 4ff271b0-de79-4162-8812-077a49edd000
-  ~registration: aafaf610-2547-49c3-a8bf-6e52e452e8f9
+  activityId: http:/example.com/activities/demo
+  agent: %7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D
+  stateId: 00000000-0000-0000-0000-000000000000
+  ~registration: 00000000-0000-0000-0000-000000000000
 }
 
 headers {

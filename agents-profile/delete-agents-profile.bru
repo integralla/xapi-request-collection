@@ -5,14 +5,14 @@ meta {
 }
 
 delete {
-  url: https://{{process.env.HOST}}/xapi/agents/profile
+  url: https://{{process.env.HOST}}/xapi/agents/profile?agent=%7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D&profileId=00000000-0000-0000-0000-000000000000
   body: none
   auth: inherit
 }
 
 query {
-  agent: {"mbox":"mailto:m7AR7dR@integralla.io"}
-  profileId: 695e8319-4d35-409a-8445-51a404ce65d9
+  agent: %7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D
+  profileId: 00000000-0000-0000-0000-000000000000
 }
 
 headers {

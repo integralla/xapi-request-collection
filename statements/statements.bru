@@ -11,19 +11,19 @@ get {
 }
 
 query {
-  ~pseudonymized: true
-  ~limit: 1
+  ~verb: http://activitystrea.ms/schema/1.0/submit
+  ~agent: %7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D
   ~format: exact
-  ~agent: {"mbox":"mailto:restricted@integralla.io"}
   ~related_agents: true
-  ~verb: http://adlnet.gov/expapi/test/voided/target/1783d33e-61e1-48fa-bfea-fed4e11812cd
-  ~registration: 712f7944-634f-4bef-91a0-8908f9a9ac5f
-  ~activity: https://lrs.integralla.io/xapi/activities/qSn3UTd
+  ~activity: http://example.com/activity/demo
   ~related_activities: true
   ~ascending: true
+  ~since: 2024-05-20T12:00:00.000Z
+  ~until: 2030-05-20T12:00:00.000Z
+  ~limit: 1
   ~attachments: true
-  ~since: 2023-10-26T17:34:44.306Z
-  ~until: 2023-09-08T00:00:00.000Z
+  ~pseudonymized: true
+  ~registration: 00000000-0000-0000-0000-000000000000
 }
 
 headers {

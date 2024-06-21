@@ -5,14 +5,14 @@ meta {
 }
 
 post {
-  url: https://{{process.env.HOST}}/xapi/activities/profile?activityId=http://example.com/activity/code-commit&profileId=db85779d-41ab-48a8-80e5-eed9683fef64
+  url: https://{{process.env.HOST}}/xapi/activities/profile?activityId=http://example.com/activity/demo&profileId=00000000-0000-0000-0000-000000000000
   body: json
   auth: inherit
 }
 
 query {
-  activityId: http://example.com/activity/code-commit
-  profileId: db85779d-41ab-48a8-80e5-eed9683fef64
+  activityId: http://example.com/activity/demo
+  profileId: 00000000-0000-0000-0000-000000000000
 }
 
 headers {

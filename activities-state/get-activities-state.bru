@@ -5,16 +5,17 @@ meta {
 }
 
 get {
-  url: https://{{process.env.HOST}}/xapi/activities/state?activityId=http:/example.com/activities/code-commit&agent=%7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D&stateId=b5c17b80-156e-4129-9b45-16fc40081d1f
+  url: https://{{process.env.HOST}}/xapi/activities/state?activityId=http:/example.com/activities/demo&agent=%7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D&stateId=00000000-0000-0000-0000-000000000000
   body: none
   auth: inherit
 }
 
 query {
-  activityId: http:/example.com/activities/code-commit
-  agent: %7B%22mbox%22%3A%22mailto%3Asishikuno%40example.com%22%7D
-  stateId: b5c17b80-156e-4129-9b45-16fc40081d1f
-  ~registration: 362ee0c0-6b10-45b4-86f8-83357addeabc
+  activityId: http:/example.com/activities/demo
+  agent: %7B%22mbox%22%3A%22mailto%3Ademo%40example.com%22%7D
+  stateId: 00000000-0000-0000-0000-000000000000
+  ~since: 2024-05-20T12:00:00.000Z
+  ~registration: 00000000-0000-0000-0000-000000000000
 }
 
 headers {

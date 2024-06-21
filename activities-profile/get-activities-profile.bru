@@ -5,15 +5,15 @@ meta {
 }
 
 get {
-  url: https://{{process.env.HOST}}/xapi/activities/profile?activityId=http://example.com/activity/code-commit&profileId=db85779d-41ab-48a8-80e5-eed9683fef64
+  url: https://{{process.env.HOST}}/xapi/activities/profile?activityId=http://example.com/activity/demo&profileId=00000000-0000-0000-0000-000000000000
   body: none
   auth: inherit
 }
 
 query {
-  activityId: http://example.com/activity/code-commit
-  profileId: db85779d-41ab-48a8-80e5-eed9683fef64
-  ~since: 2024-05-20T14:44:27.000Z
+  activityId: http://example.com/activity/demo
+  profileId: 00000000-0000-0000-0000-000000000000
+  ~since: 2024-05-20T12:00:00.000Z
 }
 
 headers {

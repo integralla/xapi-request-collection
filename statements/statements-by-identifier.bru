@@ -5,13 +5,13 @@ meta {
 }
 
 get {
-  url: https://{{process.env.HOST}}/xapi/statements?statementId=de01330f-8201-4991-8d90-4168135eaf78
+  url: https://{{process.env.HOST}}/xapi/statements?statementId=00000000-0000-0000-0000-000000000000
   body: none
   auth: inherit
 }
 
 query {
-  statementId: de01330f-8201-4991-8d90-4168135eaf78
+  statementId: 00000000-0000-0000-0000-000000000000
   ~pseudonymized: true
   ~format: canonical
   ~attachments: true
