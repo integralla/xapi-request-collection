@@ -1,8 +1,8 @@
 # xAPI Request Collection
 
-The Experience API (xAPI) Standard is an open-source e-learning specification that defines a
-standard format for representing, and securely sharing, data regarding a wide variety of learning
-experiences.
+The [Experience API (xAPI)](https://xapi.ieee-saopen.org/) Standard is an open-source e-learning
+specification that defines a standard format for representing, and securely sharing, data regarding
+a wide variety of learning experiences.
 
 This API request collection provides a basic set of requests that can be used to interact with the
 Learning Record Store (LRS) endpoint resources defined by the specification. Common use cases for
@@ -52,7 +52,8 @@ By default, requests to secure resources are configured to use HTTP Basic Authen
 username and password defined in the project's `.env` file. If your LRS supports Basic
 Authentication, you should be able to issue requests at this point.
 
-The project also defines a request to a `/xapi/oauth/token` endpoint which can be used to request an
+The project also defines a request to an `/xapi/oauth/token` endpoint which can be used to request
+an
 access token if the LRS supports authentication using an OAuth 2.0 client credentials grant type. If
 you use this authentication mechanism, you'll need to edit the collection's `Auth` configuration. To
 do so, follow the steps below:
@@ -95,7 +96,8 @@ specification which enables a requester to retrieve pseudonymized `Statement` ob
 ### OAuth 2.0 Client Credentials Grant
 
 Integralla LRS support authentication using an OAuth 2.0 Client Credentials
-Grant [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4). The `/xapi/oauth/token`
+Grant [[RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4)].
+The `/xapi/oauth/token`
 endpoint can be used to request an access token for this purpose. Refer to the `Docs` tab of the
 request for further information.
 
