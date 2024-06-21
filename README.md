@@ -6,8 +6,7 @@ a wide variety of learning experiences.
 
 This API request collection provides a basic set of requests that can be used to interact with the
 Learning Record Store (LRS) endpoint resources defined by the specification. Common use cases for
-the collection would include prototyping an integration, data exploration, or troubleshooting an
-issue.
+the collection would include planning an integration, data exploration, or troubleshooting an issue.
 
 The collection is defined using [Bruno](https://www.usebruno.com/), an API client similar to
 Postman or Insomnia. We've chosen Bruno because it's Git-friendly, open source, and offline (no
