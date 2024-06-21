@@ -1,9 +1,10 @@
 auth {
-  mode: bearer
+  mode: basic
 }
 
-auth:bearer {
-  token: {{access_token}}
+auth:basic {
+  username: {{process.env.CLIENT_ID}}
+  password: {{process.env.CLIENT_SECRET}}
 }
 
 docs {
